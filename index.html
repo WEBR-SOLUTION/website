@@ -1,0 +1,893 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WEBR SOLUTION | Creative Digital Agency</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        .gradient-text {
+            background: linear-gradient(90deg, #2563eb, #7c3aed);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .hero-gradient {
+            background: linear-gradient(135deg, rgba(37, 99, 235, 0.15) 0%, rgba(124, 58, 237, 0.15) 100%);
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+
+        .testimonial-card {
+            transition: all 0.3s ease;
+        }
+
+        .testimonial-card:hover {
+            transform: scale(1.03);
+        }
+
+        .nav-link {
+            position: relative;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -2px;
+            left: 0;
+            background: linear-gradient(90deg, #001f3f, #b91372);
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        .mobile-menu {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease-out;
+        }
+
+        .mobile-menu.open {
+            max-height: 500px;
+        }
+    </style>
+</head>
+<body class="bg-white text-gray-800">
+    <!-- Navigation -->
+    <nav class="fixed w-full bg-white shadow-sm z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20 items-center">
+                <div class="flex items-center">
+                    <a href="#" class="text-2xl font-bold gradient-text">WEBR SOLUTION</a>
+                </div>
+
+                <div class="hidden md:flex space-x-8">
+                    <a href="#home" class="nav-link text-gray-700 hover:text-blue-500">Home</a>
+                    <a href="#services" class="nav-link text-gray-700 hover:text-blue-500">Services</a>
+                    <a href="#work" class="nav-link text-gray-700 hover:text-blue-500">Work</a>
+                    <a href="#about" class="nav-link text-gray-700 hover:text-blue-500">About</a>
+                    <a href="#testimonials" class="nav-link text-gray-700 hover:text-blue-500">Testimonials</a>
+                    <a href="#contact" class="nav-link text-gray-700 hover:text-blue-500">Contact</a>
+                </div>
+
+                <button class="md:hidden focus:outline-none" id="menu-toggle">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div class="mobile-menu md:hidden bg-white shadow-lg" id="mobile-menu">
+            <div class="px-4 py-2 space-y-3">
+                <a href="#home" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-100">Home</a>
+                <a href="#services" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-100">Services</a>
+                <a href="#work" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-100">Work</a>
+                <a href="#about" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-100">About</a>
+                <a href="#testimonials" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-100">Testimonials</a>
+                <a href="#contact" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-100">Contact</a>
+                <div class="pt-4 pb-2 border-t border-gray-200">
+                    <button class="w-full bg-gradient-to-r from-blue-500 to-purple-600 text-white py-2 px-4 rounded-md font-medium hover:opacity-90 transition">Get Started</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="pt-32 pb-20 hero-gradient">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-10 md:mb-0">
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6">
+                        We Create <span class="gradient-text">Digital Experiences</span> That Matter
+                    </h1>
+                    <p class="text-lg text-gray-600 mb-8">
+                        WEBR SOLUTION is a full-service digital agency focused on helping brands grow through innovative design, development, and marketing solutions.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#contact" class="bg-gradient-to-r from-blue-700 to-purple-700 text-white py-3 px-6 rounded-md font-medium hover:opacity-90 transition shadow-lg transform hover:scale-105">
+                            Get Started
+                        </a>
+                        <a href="#work" class="border border-slate-500 text-slate-700 py-3 px-6 rounded-md font-medium hover:bg-slate-50 transition">
+                            View Our Work
+                        </a>
+                    </div>
+                </div>
+                <div class="md:w-1/2 flex justify-center">
+                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+                         alt="Digital Agency"
+                         class="rounded-xl shadow-2xl w-full max-w-lg">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Clients Section -->
+    <section class="py-12 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-center text-gray-500 text-sm font-semibold uppercase tracking-wide mb-8">Trusted by leading brands</h2>
+            <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-8 items-center">
+                <img src="https://via.placeholder.com/150x60?text=Brand+1" alt="Brand 1" class="h-12 opacity-60 hover:opacity-100 transition mx-auto">
+                <img src="https://via.placeholder.com/150x60?text=Brand+2" alt="Brand 2" class="h-12 opacity-60 hover:opacity-100 transition mx-auto">
+                <img src="https://via.placeholder.com/150x60?text=Brand+3" alt="Brand 3" class="h-12 opacity-60 hover:opacity-100 transition mx-auto">
+                <img src="https://via.placeholder.com/150x60?text=Brand+4" alt="Brand 4" class="h-12 opacity-60 hover:opacity-100 transition mx-auto">
+                <img src="https://via.placeholder.com/150x60?text=Brand+5" alt="Brand 5" class="h-12 opacity-60 hover:opacity-100 transition mx-auto">
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Our <span class="gradient-text">Tech Services</span></h2>
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+                    Specialized in Python, JavaScript, and security solutions to build and protect your digital presence.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Service 1 -->
+                <div class="service-card bg-white p-8 rounded-xl shadow-md transition duration-300">
+                    <div class="w-14 h-14 bg-blue-100 rounded-lg flex items-center justify-center mb-6">
+                        <i class="fas fa-code text-blue-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Web Development</h3>
+                    <p class="text-gray-600 mb-4">
+                        Full-stack web development with modern frameworks like React, Next.js, and Vue for responsive, high-performance sites.
+                    </p>
+                    <a href="#" class="text-blue-500 font-medium inline-flex items-center">
+                        Learn more <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="service-card bg-white p-8 rounded-xl shadow-md transition duration-300">
+                    <div class="w-14 h-14 bg-purple-100 rounded-lg flex items-center justify-center mb-6">
+                        <i class="fab fa-python text-purple-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Backend Development</h3>
+                    <p class="text-gray-600 mb-4">
+                        Robust backend solutions using Python with Django and Flask frameworks for scalable applications.
+                    </p>
+                    <a href="#" class="text-blue-500 font-medium inline-flex items-center">
+                        Learn more <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="service-card bg-white p-8 rounded-xl shadow-md transition duration-300">
+                    <div class="w-14 h-14 bg-green-100 rounded-lg flex items-center justify-center mb-6">
+                        <i class="fas fa-robot text-green-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Automation</h3>
+                    <p class="text-gray-600 mb-4">
+                        Custom Python scripts to automate repetitive tasks, data processing, and workflow optimization.
+                    </p>
+                    <a href="#" class="text-blue-500 font-medium inline-flex items-center">
+                        Learn more <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+
+                <!-- Service 4 -->
+                <div class="service-card bg-white p-8 rounded-xl shadow-md transition duration-300">
+                    <div class="w-14 h-14 bg-yellow-100 rounded-lg flex items-center justify-center mb-6">
+                        <i class="fas fa-mobile text-yellow-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Custom Applications</h3>
+                    <p class="text-gray-600 mb-4">
+                        Tailored desktop and mobile applications built to solve your specific business challenges.
+                    </p>
+                    <a href="#" class="text-blue-500 font-medium inline-flex items-center">
+                        Learn more <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+
+                <!-- Service 5 -->
+                <div class="service-card bg-white p-8 rounded-xl shadow-md transition duration-300">
+                    <div class="w-14 h-14 bg-red-100 rounded-lg flex items-center justify-center mb-6">
+                        <i class="fas fa-shield-alt text-red-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Security Testing</h3>
+                    <p class="text-gray-600 mb-4">
+                        Comprehensive penetration testing and security audits to protect your digital assets.
+                    </p>
+                    <a href="#" class="text-blue-500 font-medium inline-flex items-center">
+                        Learn more <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+
+                <!-- Service 6 -->
+                <div class="service-card bg-white p-8 rounded-xl shadow-md transition duration-300">
+                    <div class="w-14 h-14 bg-indigo-100 rounded-lg flex items-center justify-center mb-6">
+                        <i class="fas fa-lock text-indigo-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Cybersecurity</h3>
+                    <p class="text-gray-600 mb-4">
+                        Security consulting and implementation to safeguard your systems and data from threats.
+                    </p>
+                    <a href="#" class="text-blue-500 font-medium inline-flex items-center">
+                        Learn more <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Work/Portfolio Section -->
+    <section id="work" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Our <span class="gradient-text">Portfolio</span></h2>
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+                    Explore our recent projects and see how we've helped our clients achieve their goals.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Project 1 -->
+                <div class="group relative overflow-hidden rounded-xl shadow-lg">
+                    <img src="https://images.unsplash.com/photo-1547658719-da2b51169166?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1528&q=80"
+                         alt="Project 1"
+                         class="w-full h-64 object-cover transition duration-500 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-0 group-hover:opacity-80 transition duration-300"></div>
+                    <div class="absolute bottom-0 left-0 p-6 opacity-0 group-hover:opacity-100 transition duration-300">
+                        <h3 class="text-white text-xl font-bold mb-2">E-commerce Platform</h3>
+                        <p class="text-gray-200 mb-3">A complete online shopping solution with custom features</p>
+                        <a href="#" class="text-white font-medium inline-flex items-center">
+                            View Case Study <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="group relative overflow-hidden rounded-xl shadow-lg">
+                    <img src="https://images.unsplash.com/photo-1559028012-481c04fa702d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1436&q=80"
+                         alt="Project 2"
+                         class="w-full h-64 object-cover transition duration-500 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-0 group-hover:opacity-80 transition duration-300"></div>
+                    <div class="absolute bottom-0 left-0 p-6 opacity-0 group-hover:opacity-100 transition duration-300">
+                        <h3 class="text-white text-xl font-bold mb-2">Mobile Banking App</h3>
+                        <p class="text-gray-200 mb-3">Secure and user-friendly banking experience</p>
+                        <a href="#" class="text-white font-medium inline-flex items-center">
+                            View Case Study <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="group relative overflow-hidden rounded-xl shadow-lg">
+                    <img src="https://images.unsplash.com/photo-1522542550221-31fd19575a2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+                         alt="Project 3"
+                         class="w-full h-64 object-cover transition duration-500 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-0 group-hover:opacity-80 transition duration-300"></div>
+                    <div class="absolute bottom-0 left-0 p-6 opacity-0 group-hover:opacity-100 transition duration-300">
+                        <h3 class="text-white text-xl font-bold mb-2">Corporate Website</h3>
+                        <p class="text-gray-200 mb-3">Modern and responsive website for a tech company</p>
+                        <a href="#" class="text-white font-medium inline-flex items-center">
+                            View Case Study <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mt-12">
+                <a href="#" class="inline-flex items-center px-6 py-3 border border-gray-300 rounded-md shadow-sm text-base font-medium text-gray-700 bg-white hover:bg-gray-50 focus:outline-none">
+                    View All Projects
+                    <i class="fas fa-arrow-right ml-2"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-10 md:mb-0 md:pr-10">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-6">About <span class="gradient-text">WEBR SOLUTION</span></h2>
+                    <p class="text-gray-600 mb-6">
+                        Founded in 2015, WEBR SOLUTION has grown from a small design studio to a full-service digital agency with a team of passionate creatives, developers, and strategists.
+                    </p>
+                    <p class="text-gray-600 mb-8">
+                        We believe in the power of digital transformation to create meaningful connections between brands and their audiences. Our approach combines creativity, technology, and data to deliver exceptional results.
+                    </p>
+                    <div class="grid grid-cols-2 gap-4 mb-8">
+                        <div class="flex items-center">
+                            <div class="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center mr-3">
+                                <i class="fas fa-check text-blue-500"></i>
+                            </div>
+                            <span class="font-medium">100+ Projects</span>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-10 h-10 bg-purple-100 rounded-full flex items-center justify-center mr-3">
+                                <i class="fas fa-check text-purple-500"></i>
+                            </div>
+                            <span class="font-medium">50+ Clients</span>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center mr-3">
+                                <i class="fas fa-check text-green-500"></i>
+                            </div>
+                            <span class="font-medium">15 Awards</span>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-10 h-10 bg-yellow-100 rounded-full flex items-center justify-center mr-3">
+                                <i class="fas fa-check text-yellow-500"></i>
+                            </div>
+                            <span class="font-medium">10 Countries</span>
+                        </div>
+                    </div>
+                    <a href="#" class="bg-gradient-to-r from-blue-500 to-purple-600 text-white py-3 px-6 rounded-md font-medium hover:opacity-90 transition inline-flex items-center">
+                        Learn More About Us
+                        <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+                <div class="md:w-1/2 relative">
+                    <img src="https://images.unsplash.com/photo-1579389083078-4e7018379f7e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+                         alt="Our Team"
+                         class="rounded-xl shadow-xl w-full">
+                    <div class="absolute -bottom-6 -left-6 w-32 h-32 bg-blue-500 rounded-xl z-10 hidden md:block"></div>
+                    <div class="absolute -top-6 -right-6 w-32 h-32 bg-purple-500 rounded-xl z-10 hidden md:block"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+   <!-- Testimonials Section -->
+<section id="testimonials" class="py-20 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl md:text-4xl font-bold mb-4">What Our <span class="gradient-text">Clients Say</span></h2>
+            <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+                Trusted by startups and enterprises for reliable, secure, and scalable tech solutions.
+            </p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Testimonial 1 -->
+            <div class="testimonial-card bg-white p-8 rounded-xl shadow-md">
+                <div class="flex items-center mb-6">
+                    <div class="w-12 h-12 rounded-full overflow-hidden mr-4">
+                        <img src="https://cdn1.iconfinder.com/data/icons/user-pictures/100/male3-512.png" alt="Rahul Mehta" class="w-full h-full object-cover">
+                    </div>
+                    <div>
+                        <h4 class="font-bold">Alex Adam</h4>
+                        <p class="text-gray-500 text-sm">CTO, FinTechFlow</p>
+                    </div>
+                </div>
+                <p class="text-gray-600 mb-6">
+                    "WEBR SOLUTION built our Flask backend from scratch. Their Python expertise and attention to security made our platform robust and scalable. Highly recommended for any Python-based project."
+                </p>
+                <div class="flex text-yellow-400">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+            </div>
+            <!-- Testimonial 2 -->
+            <div class="testimonial-card bg-white p-8 rounded-xl shadow-md">
+                <div class="flex items-center mb-6">
+                    <div class="w-12 h-12 rounded-full overflow-hidden mr-4">
+                        <img src="https://cdn-icons-png.flaticon.com/512/4042/4042422.png" alt="Lena Schmidt" class="w-full h-full object-cover">
+                    </div>
+                    <div>
+                        <h4 class="font-bold">Lena Schmidt</h4>
+                        <p class="text-gray-500 text-sm">Founder, DataAuto</p>
+                    </div>
+                </div>
+                <p class="text-gray-600 mb-6">
+                    "They automated our entire data pipeline using Python scripts. What used to take 20 hours now runs in 15 minutes. WEBR SOLUTION delivered beyond expectations — efficient, clean, and well-documented code."
+                </p>
+                <div class="flex text-yellow-400">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                </div>
+            </div>
+            <!-- Testimonial 3 -->
+            <div class="testimonial-card bg-white p-8 rounded-xl shadow-md">
+                <div class="flex items-center mb-6">
+                    <div class="w-12 h-12 rounded-full overflow-hidden mr-4">
+                        <img src="https://cdn1.iconfinder.com/data/icons/user-pictures/100/male3-512.png" alt="James Park" class="w-full h-full object-cover">
+                    </div>
+                    <div>
+                        <h4 class="font-bold">James Park</h4>
+                        <p class="text-gray-500 text-sm">Security Lead, HealthApp</p>
+                    </div>
+                </div>
+                <p class="text-gray-600 mb-6">
+                    "After a security audit by WEBR SOLUTION, we fixed 12 critical vulnerabilities. Their penetration testing report was detailed and actionable. Now we're compliant and confident in our app's security."
+                </p>
+                <div class="flex text-yellow-400">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- Stats Section -->
+    <section class="py-16 bg-gradient-to-r from-blue-600 to-purple-700 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+                <div>
+                    <div class="text-4xl md:text-5xl font-bold mb-2">150+</div>
+                    <div class="text-sm uppercase tracking-wider">Projects Completed</div>
+                </div>
+                <div>
+                    <div class="text-4xl md:text-5xl font-bold mb-2">75+</div>
+                    <div class="text-sm uppercase tracking-wider">Happy Clients</div>
+                </div>
+                <div>
+                    <div class="text-4xl md:text-5xl font-bold mb-2">15+</div>
+                    <div class="text-sm uppercase tracking-wider">Industry Awards</div>
+                </div>
+                <div>
+                    <div class="text-4xl md:text-5xl font-bold mb-2">98%</div>
+                    <div class="text-sm uppercase tracking-wider">Client Retention</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Meet Our <span class="gradient-text">Team</span></h2>
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+                    A talented group of professionals dedicated to delivering exceptional results.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Team Member 1 -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden transition duration-300 hover:shadow-xl">
+                    <div class="h-64 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80"
+                             alt="Alex Turner"
+                             class="w-full h-full object-cover transition duration-500 hover:scale-105">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-1">Alex Turner</h3>
+                        <p class="text-blue-500 mb-4">Creative Director</p>
+                        <p class="text-gray-600 mb-4">
+                            Leads our design team with a focus on innovative solutions and exceptional user experiences.
+                        </p>
+                        <div class="flex space-x-4">
+                            <a href="#" class="text-gray-500 hover:text-blue-500"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#" class="text-gray-500 hover:text-blue-500"><i class="fab fa-twitter"></i></a>
+                            <a href="#" class="text-gray-500 hover:text-blue-500"><i class="fab fa-dribbble"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Team Member 2 -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden transition duration-300 hover:shadow-xl">
+                    <div class="h-64 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=688&q=80"
+                             alt="Sarah Miller"
+                             class="w-full h-full object-cover transition duration-500 hover:scale-105">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-1">Sarah Miller</h3>
+                        <p class="text-purple-500 mb-4">Lead Developer</p>
+                        <p class="text-gray-600 mb-4">
+                            Technical expert ensuring our solutions are robust, scalable, and future-proof.
+                        </p>
+                        <div class="flex space-x-4">
+                            <a href="#" class="text-gray-500 hover:text-blue-500"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#" class="text-gray-500 hover:text-blue-500"><i class="fab fa-twitter"></i></a>
+                            <a href="#" class="text-gray-500 hover:text-blue-500"><i class="fab fa-github"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Team Member 3 -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden transition duration-300 hover:shadow-xl">
+                    <div class="h-64 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=761&q=80"
+                             alt="Jamie Chen"
+                             class="w-full h-full object-cover transition duration-500 hover:scale-105">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-1">Jamie Chen</h3>
+                        <p class="text-green-500 mb-4">Marketing Strategist</p>
+                        <p class="text-gray-600 mb-4">
+                            Develops data-driven marketing campaigns that deliver measurable results.
+                        </p>
+                        <div class="flex space-x-4">
+                            <a href="#" class="text-gray-500 hover:text-blue-500"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#" class="text-gray-500 hover:text-blue-500"><i class="fab fa-twitter"></i></a>
+                            <a href="#" class="text-gray-500 hover:text-blue-500"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Team Member 4 -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden transition duration-300 hover:shadow-xl">
+                    <div class="h-64 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1531123897727-8f129e1688ce?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80"
+                             alt="David Wilson"
+                             class="w-full h-full object-cover transition duration-500 hover:scale-105">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-1">David Wilson</h3>
+                        <p class="text-yellow-500 mb-4">Project Manager</p>
+                        <p class="text-gray-600 mb-4">
+                            Ensures projects are delivered on time, within budget, and exceed expectations.
+                        </p>
+                        <div class="flex space-x-4">
+                            <a href="#" class="text-gray-500 hover:text-blue-500"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#" class="text-gray-500 hover:text-blue-500"><i class="fab fa-twitter"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 bg-gradient-to-r from-blue-700 to-purple-800 text-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6">Ready to Transform Your Digital Presence?</h2>
+            <p class="text-xl mb-8 max-w-3xl mx-auto">
+                Let's discuss how we can help your business grow and succeed in the digital world.
+            </p>
+            <a href="#contact" class="bg-white text-blue-600 py-3 px-8 rounded-md font-bold hover:bg-gray-100 transition inline-block shadow-lg">
+                Get Started Today
+            </a>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row">
+                <div class="md:w-1/2 mb-10 md:mb-0 md:pr-10">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-6">Get In <span class="gradient-text">Touch</span></h2>
+                    <p class="text-gray-600 mb-8">
+                        Have a project in mind or want to learn more about our services? Fill out the form and we'll get back to you within 24 hours.
+                    </p>
+
+                    <div class="space-y-6">
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 h-10 w-10 rounded-full bg-blue-100 flex items-center justify-center mr-4">
+                                <i class="fas fa-map-marker-alt text-blue-500"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-lg">Our Office</h4>
+                                <p class="text-gray-600">123 Digital Avenue, Suite 400<br>San Francisco, CA 94103</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 h-10 w-10 rounded-full bg-purple-100 flex items-center justify-center mr-4">
+                                <i class="fas fa-envelope text-purple-500"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-lg">Email Us</h4>
+                                <p class="text-gray-600">hello@nexusagency.com<br>support@nexusagency.com</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 h-10 w-10 rounded-full bg-green-100 flex items-center justify-center mr-4">
+                                <i class="fas fa-phone-alt text-green-500"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-lg">Call Us</h4>
+                                <p class="text-gray-600">+1 (555) 123-4567<br>Mon-Fri, 9am-6pm PST</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-8">
+                        <h4 class="font-bold text-lg mb-4">Follow Us</h4>
+                        <div class="flex space-x-4">
+                            <a href="#" class="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center text-gray-700 hover:bg-blue-500 hover:text-white transition">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a href="#" class="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center text-gray-700 hover:bg-blue-400 hover:text-white transition">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a href="#" class="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center text-gray-700 hover:bg-pink-600 hover:text-white transition">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="#" class="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center text-gray-700 hover:bg-blue-700 hover:text-white transition">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                            <a href="#" class="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center text-gray-700 hover:bg-red-600 hover:text-white transition">
+                                <i class="fab fa-youtube"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="md:w-1/2">
+                    <form id="contact-form" class="bg-white p-8 rounded-xl shadow-md">
+                        <div class="mb-6">
+                            <label for="full_name" class="block text-gray-700 font-medium mb-2">Full Name</label>
+                            <input type="text" id="full_name" name="full_name" class="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent" placeholder="John Doe" required>
+                        </div>
+
+                        <div class="mb-6">
+                            <label for="email" class="block text-gray-700 font-medium mb-2">Email Address</label>
+                            <input type="email" id="email" name="email" class="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent" placeholder="john@example.com" required>
+                        </div>
+
+                        <div class="mb-6">
+                            <label for="mobile_number" class="block text-gray-700 font-medium mb-2">Mobile Number</label>
+                            <input type="tel" id="mobile_number" name="mobile_number" class="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent" placeholder="+1 (555) 123-4567" required>
+                        </div>
+
+                        <div class="mb-6">
+                            <label for="service_interest" class="block text-gray-700 font-medium mb-2">Service Interested In</label>
+                            <select id="service_interest" name="service_interest" class="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent" required>
+                                <option value="">Select a service</option>
+                                <option value="Consultation Software/Security">Consultation Software/Security</option>
+                                <option value="Web Development">Web Development</option>
+                                <option value="Backend Development">Backend Development</option>
+                                <option value="Custom Applications">Custom Applications</option>
+                                <option value="Security Testing">Security Testing</option>
+                                <option value="Cybersecurity">Cybersecurity</option>
+                            </select>
+                        </div>
+
+                        <div class="mb-6">
+                            <label for="message" class="block text-gray-700 font-medium mb-2">Your Message</label>
+                            <textarea id="message" name="message" rows="5" class="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent" placeholder="Tell us about your project..." required></textarea>
+                        </div>
+
+                        <div id="form-message" class="hidden mb-4 text-center"></div>
+
+                        <button type="submit" class="w-full bg-gradient-to-r from-blue-600 to-purple-700 text-white py-3 px-6 rounded-md font-medium hover:opacity-90 transition shadow-lg transform hover:scale-[1.02]">
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4 gradient-text">WEBR SOLUTION</h3>
+                    <p class="text-gray-400">
+                        A full-service digital agency creating meaningful digital experiences that drive results.
+                    </p>
+                </div>
+
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Services</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Branding & Design</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Web Development</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Digital Marketing</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Mobile Apps</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">SEO Optimization</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Company</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">About Us</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Our Team</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Careers</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Blog</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Newsletter</h4>
+                    <p class="text-gray-400 mb-4">
+                        Subscribe to our newsletter for the latest updates and insights.
+                    </p>
+                    <form class="flex">
+                        <input type="email" placeholder="Your email" class="px-4 py-2 rounded-l-md focus:outline-none text-gray-900 w-full">
+                        <button type="submit" class="bg-gradient-to-r from-blue-700 to-purple-700 px-4 py-2 rounded-r-md hover:opacity-90 transition transform hover:scale-105">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-400 mb-4 md:mb-0">
+                    &copy; 2023 WEBR SOLUTION Digital Agency. All rights reserved.
+                </p>
+                <div class="flex space-x-6">
+                    <a href="#" class="text-gray-400 hover:text-white transition">Privacy Policy</a>
+                    <a href="#" class="text-gray-400 hover:text-white transition">Terms of Service</a>
+                    <a href="#" class="text-gray-400 hover:text-white transition">Sitemap</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.getElementById('menu-toggle').addEventListener('click', function() {
+            document.getElementById('mobile-menu').classList.toggle('open');
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+
+                if (targetElement) {
+                    // Close mobile menu if open
+                    document.getElementById('mobile-menu').classList.remove('open');
+
+                    // Calculate the scroll position, accounting for fixed header
+                    const headerHeight = document.querySelector('nav').offsetHeight;
+                    const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - headerHeight;
+
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Add shadow to navbar on scroll
+        window.addEventListener('scroll', function() {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 10) {
+                nav.classList.add('shadow-lg');
+            } else {
+                nav.classList.remove('shadow-lg');
+            }
+        });
+    </script>
+<!--     <script src="contact-form.js"></script> -->
+<script>
+// === Contact Form Handler (Embedded for Reliability) ===
+document.addEventListener('DOMContentLoaded', function () {
+    const form = document.getElementById('contact-form');
+    const formMessage = document.getElementById('form-message');
+
+    if (!form) {
+        console.error('❌ #contact-form not found. Check ID.');
+        return;
+    }
+    if (!formMessage) {
+        console.error('❌ #form-message not found. Check ID.');
+        return;
+    }
+
+    const apiUrl = 'https://webrsolution.pythonanywhere.com/api/submit';
+    const apiKey = '068e4b57f9876e6c17c03a00da76ff74';
+
+    function showMessage(message, isError = false) {
+        formMessage.textContent = message;
+        formMessage.className = `mb-4 text-center text-sm font-medium p-2 rounded-md ${
+            isError
+                ? 'text-red-600 bg-red-100'
+                : 'text-green-600 bg-green-100'
+        }`;
+        formMessage.classList.remove('hidden');
+        setTimeout(() => formMessage.classList.add('hidden'), 5000);
+    }
+
+    function isValidEmail(email) {
+        const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return re.test(email);
+    }
+
+    form.addEventListener('submit', async function (e) {
+        e.preventDefault(); // 🔴 STOP PAGE REFRESH
+        console.log("Form submit intercepted!"); // Debug
+
+        const formData = {
+            full_name: document.getElementById('full_name').value.trim(),
+            email: document.getElementById('email').value.trim(),
+            mobile_number: document.getElementById('mobile_number').value.trim(),
+            service_interest: document.getElementById('service_interest').value,
+            message: document.getElementById('message').value.trim()
+        };
+
+        // Validation
+        if (!formData.full_name) return showMessage('Enter your full name', true);
+        if (!formData.email || !isValidEmail(formData.email)) return showMessage('Enter a valid email', true);
+        if (!formData.mobile_number) return showMessage('Enter your mobile number', true);
+        if (!formData.service_interest) return showMessage('Select a service', true);
+        if (!formData.message) return showMessage('Enter a message', true);
+
+        const submitBtn = form.querySelector('button[type="submit"]');
+        const originalText = submitBtn.innerHTML;
+        submitBtn.disabled = true;
+        submitBtn.innerHTML = 'Sending...';
+
+        try {
+            const response = await fetch(apiUrl, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': `Bearer ${apiKey}`
+                },
+                body: JSON.stringify(formData)
+            });
+
+            submitBtn.disabled = false;
+            submitBtn.innerHTML = originalText;
+
+            if (!response.ok) {
+                let error = 'Submit failed';
+                try { error = (await response.json()).error || error; }
+                catch { error = await response.text(); }
+                return showMessage(`Error: ${error.substring(0, 100)}`, true);
+            }
+
+            const result = await response.json();
+            showMessage('✅ Message sent successfully!');
+            form.reset();
+
+        } catch (err) {
+            console.error('Fetch error:', err);
+            submitBtn.disabled = false;
+            submitBtn.innerHTML = originalText;
+            showMessage('Network error. Check console.', true);
+        }
+    });
+
+    console.log("✅ Contact form script loaded and ready.");
+});
+</script>
+</body>
+</html>
