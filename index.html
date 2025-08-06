@@ -797,22 +797,21 @@
     </script>
 <!--     <script src="contact-form.js"></script> -->
 <script>
-// === Contact Form Handler (Embedded for Reliability) ===
 document.addEventListener('DOMContentLoaded', function () {
     const form = document.getElementById('contact-form');
     const formMessage = document.getElementById('form-message');
-
+    
     if (!form) {
-        console.error('❌ #contact-form not found. Check ID.');
+        console.error('❌ #contact-form not found.');
         return;
     }
     if (!formMessage) {
-        console.error('❌ #form-message not found. Check ID.');
+        console.error('❌ #form-message not found.');
         return;
     }
 
-    const apiUrl = 'https://webrsolution.pythonanywhere.com/api/submit';
-    const apiKey = '068e4b57f9876e6c17c03a00da76ff74';
+    // ✅ Now calls YOUR backend (which hides the key)
+    const apiUrl = '/api/submit'; // ← Changed: calls your server
 
     function showMessage(message, isError = false) {
         formMessage.textContent = message;
@@ -831,8 +830,8 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     form.addEventListener('submit', async function (e) {
-        e.preventDefault(); // 🔴 STOP PAGE REFRESH
-        console.log("Form submit intercepted!"); // Debug
+        e.preventDefault();
+        console.log("Form submit intercepted!");
 
         const formData = {
             full_name: document.getElementById('full_name').value.trim(),
@@ -858,8 +857,7 @@ document.addEventListener('DOMContentLoaded', function () {
             const response = await fetch(apiUrl, {
                 method: 'POST',
                 headers: {
-                    'Content-Type': 'application/json',
-                    'Authorization': `Bearer ${apiKey}`
+                    'Content-Type': 'application/json'
                 },
                 body: JSON.stringify(formData)
             });
@@ -877,7 +875,6 @@ document.addEventListener('DOMContentLoaded', function () {
             const result = await response.json();
             showMessage('✅ Message sent successfully!');
             form.reset();
-
         } catch (err) {
             console.error('Fetch error:', err);
             submitBtn.disabled = false;
